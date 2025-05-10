@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена - Клуб спокойных троп</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Специфичные стили для страницы 404 */
+        .error-page {
+            background: url('images/404.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .error-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .error-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .error-title {
+            font-family: 'Cormorant Unicase', serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .error-code {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 120px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        
+        .home-link {
+            display: inline-block;
+            background: #A46641;
+            color: white;
+            padding: 15px 40px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 22px;
+            transition: all 0.3s ease;
+        }
+        
+        .home-link:hover {
+            background: #8a5534;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .error-title {
+                font-size: 48px;
+            }
+            
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .home-link {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="error-page">
+        <div class="error-content">
+            <h1 class="error-title">Страница не найдена</h1>
+            <div class="error-code">404</div>
+            <a href="index.html" class="home-link">Главная</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Можно добавить дополнительный JavaScript при необходимости
+        });
+    </script>
+</body>
+</html>

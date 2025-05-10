@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование - Клуб спокойных троп</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <!-- Шапка сайта (как в других страницах) -->
+
+    <main class="booking-container">
+        <h1>Мастер-класс по свечеварению</h1>
+        
+        <form id="booking-form" class="booking-form">
+            <div class="form-group">
+                <label for="name">ФИО</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Номер телефона</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7(___)___-__-__" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="datetime">Дата и время</label>
+                <input type="text" id="datetime" name="datetime" value="12.01.2025 13:00" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label>Количество билетов</label>
+                <div class="ticket-counter">
+                    <span class="ticket-price">4 000 ₽</span>
+                    <div class="counter-controls">
+                        <button type="button" class="counter-btn minus">-</button>
+                        <input type="number" id="tickets" name="tickets" value="1" min="1" max="10">
+                        <button type="button" class="counter-btn plus">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group total">
+                <label>Стоимость</label>
+                <div id="total-price" class="total-price">4 000 ₽</div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Оформить</button>
+        </form>
+        
+        <div id="success-message" class="success-message" style="display:none;">
+            <h2>Бронирование успешно оформлено!</h2>
+            <p>На вашу почту отправлено подтверждение.</p>
+        </div>
+    </main>
+
+    <!-- Футер сайта (как в других страницах) -->
+
+    <script src="booking.js"></script>
+</body>
+</html>

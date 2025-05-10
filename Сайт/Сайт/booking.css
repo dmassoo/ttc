@@ -1,0 +1,108 @@
+.booking-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.booking-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.ticket-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-price {
+    font-weight: 600;
+}
+
+.counter-controls {
+    display: flex;
+    align-items: center;
+}
+
+.counter-btn {
+    width: 40px;
+    height: 40px;
+    background: #717857;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.counter-btn:hover {
+    background: #5A6145;
+}
+
+#tickets {
+    width: 60px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.total {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #717857;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #5A6145;
+}
+
+.success-message {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9f3;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.success-message h2 {
+    color: #717857;
+    margin-bottom: 15px;
+}
