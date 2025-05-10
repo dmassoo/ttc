@@ -48,7 +48,7 @@ export default function Header() {
           <ul>
             {[
               { path: '/', text: 'главная' },
-              { path: '/afisha', text: 'афиша' },
+              { path: '/events', text: 'афиша' },
               { path: '/about', text: 'о нас' },
               { path: '/market', text: 'маркет' },
               { path: '/contacts', text: 'контакты' }
