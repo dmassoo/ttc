@@ -1,5 +1,6 @@
-// Component for Contact Form Section
-function ContactFormSection() {
+import { useState } from 'react';
+
+export default function ContactFormSection() {
     const [formData, setFormData] = useState({
       name: '',
       email: '',

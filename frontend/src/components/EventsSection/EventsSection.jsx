@@ -1,5 +1,6 @@
-// Component for Events Section
-function EventsSection() {
+import { useState } from 'react';
+
+export default function EventsSection() {
     const events = [
       {
         id: 1,

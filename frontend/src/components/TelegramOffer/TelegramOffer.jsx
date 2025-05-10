@@ -1,5 +1,5 @@
 // Component for Telegram Offer
-function TelegramOffer() {
+export default function TelegramOffer() {
     return (
       <div className="telegram-plate">
         <div className="container">

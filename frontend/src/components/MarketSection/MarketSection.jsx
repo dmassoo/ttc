@@ -1,5 +1,5 @@
 // Component for Market Section
-function MarketSection() {
+export default function MarketSection() {
   const products = [
     {
       id: 1,

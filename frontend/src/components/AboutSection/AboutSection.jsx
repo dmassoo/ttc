@@ -1,5 +1,5 @@
 // Component for About Section
-function AboutSection() {
+export default function AboutSection() {
     return (
       <section className="about-us">
         <div className="container">

@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import AboutSection from './components/AboutSection/AboutSection';
+import EventsSection from './components/EventsSection/EventsSection';
+import WhyJoinSection from './components/WhyJoinSection/WhyJoinSection';
+import TelegramOffer from './components/TelegramOffer/TelegramOffer';
+import MarketSection from './components/MarketSection/MarketSection';
+import ReviewsSection from './components/ReviewsSection/ReviewsSection';
+import ContactFormSection from './components/ContactFormSection/ContactFormSection';
 import './App.css';
 
 function App() {

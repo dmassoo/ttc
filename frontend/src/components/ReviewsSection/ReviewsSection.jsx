@@ -1,5 +1,6 @@
-// Component for Reviews Section
-function ReviewsSection() {
+import { useState } from 'react';
+
+export default function ReviewsSection() {
   const reviews = [
     {
       id: 1,
