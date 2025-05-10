@@ -2,17 +2,16 @@ import { useState, useEffect } from 'react';
 
 export default function ReviewsSection() {
   const [reviews, setReviews] = useState([]);
-  const [currentReview, setCurrentReview] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const reviewsPerPage = 3;
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
         const response = await fetch('/api/reviews');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+        if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         setReviews(data);
       } catch (err) {
@@ -25,61 +24,38 @@ export default function ReviewsSection() {
     fetchReviews();
   }, []);
 
-  const nextReview = () => {
-    setCurrentReview((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+  const nextReviews = () => {
+    setCurrentIndex(prev => 
+      prev + reviewsPerPage >= reviews.length ? 0 : prev + 1
+    );
   };
 
-  const prevReview = () => {
-    setCurrentReview((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+  const prevReviews = () => {
+    setCurrentIndex(prev => 
+      prev === 0 ? reviews.length - reviewsPerPage : prev - 1
+    );
   };
 
-  if (loading) {
-    return (
-      <section className="reviews-section">
-        <div className="container">
-          <h3>Отзывы</h3>
-          <p>Загрузка отзывов...</p>
-        </div>
-      </section>
-    );
-  }
+  const visibleReviews = reviews.slice(
+    currentIndex, 
+    currentIndex + reviewsPerPage
+  );
 
-  if (error) {
-    return (
-      <section className="reviews-section">
-        <div className="container">
-          <h3>Отзывы</h3>
-          <p>Ошибка загрузки: {error}</p>
-        </div>
-      </section>
-    );
-  }
-
-  if (reviews.length === 0) {
-    return (
-      <section className="reviews-section">
-        <div className="container">
-          <h3>Отзывы</h3>
-          <p>Нет доступных отзывов</p>
-        </div>
-      </section>
-    );
-  }
+  if (loading) return <div>Загрузка отзывов...</div>;
+  if (error) return <div>Ошибка: {error}</div>;
+  if (reviews.length === 0) return <div>Нет отзывов</div>;
 
   return (
     <section className="reviews-section">
       <div className="container">
         <h3>Отзывы</h3>
         <div className="reviews-grid">
-          {reviews.map((review, index) => (
-            <div
-              className={`review-card ${index === currentReview ? 'active' : ''}`}
-              key={review.id}
-            >
+          {visibleReviews.map((review) => (
+            <div className="review-card" key={review.id}>
               <div className="review-image">
-                <img
-                  src={review.image || '/images/default-avatar.jpg'}
-                  alt={review.name}
+                <img 
+                  src={review.photoUrl} 
+                  alt={review.full_name} 
                   loading="lazy"
                   onError={(e) => {
                     e.target.src = '/images/default-avatar.jpg';
@@ -87,12 +63,23 @@ export default function ReviewsSection() {
                 />
               </div>
               <div className="review-text">
-                <h4>{review.name}</h4>
+                <h4>{review.full_name}{review.age && `, ${review.age} лет`}</h4>
                 <p>{review.text}</p>
               </div>
             </div>
           ))}
         </div>
+        
+        {reviews.length > reviewsPerPage && (
+          <div className="carousel-navigation">
+          <button className="nav-button prev" onClick={prevReviews}>
+            ‹
+          </button>  
+          <button className="nav-button next" onClick={nextReviews}>
+            ›
+          </button>
+        </div>
+        )}
       </div>
     </section>
   );
