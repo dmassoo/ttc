@@ -55,7 +55,7 @@ export default function ReviewsSection() {
               <div className="review-image">
                 <img 
                   src={review.photoUrl} 
-                  alt={review.full_name} 
+                  alt={review.name} 
                   loading="lazy"
                   onError={(e) => {
                     e.target.src = '/images/default-avatar.jpg';
@@ -63,7 +63,7 @@ export default function ReviewsSection() {
                 />
               </div>
               <div className="review-text">
-                <h4>{review.full_name}{review.age && `, ${review.age} лет`}</h4>
+                <h4>{review.name}{review.age && `, ${review.age} лет`}</h4>
                 <p>{review.text}</p>
               </div>
             </div>
